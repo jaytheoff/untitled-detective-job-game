@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b8ylxagye4cea"]
+
+[ext_resource type="PackedScene" uid="uid://duvqlfx2flam3" path="res://src/Scenes/player.tscn" id="1_cjtun"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cb4pc"]
+size = Vector3(51.57123, 1, 51.05168)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cjtun"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="Environment" id="Environment_1fexg"]
+background_mode = 1
+background_color = Color(0.05142393, 0.58583534, 0.735399, 1)
+
+[node name="SuperMarket" type="Node3D" unique_id=1669226758]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1458852775]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2028778764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37450218, 0, 0.3882141)
+shape = SubResource("BoxShape3D_cb4pc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1203736934]
+mesh = SubResource("BoxMesh_cjtun")
+
+[node name="Player" parent="StaticBody3D" unique_id=2082779931 instance=ExtResource("1_cjtun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69301224, 10.373072, -0.10689545)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1812971254]
+environment = SubResource("Environment_1fexg")
