@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://dv3d48o2vhjb7"]
+
+[ext_resource type="Script" uid="uid://pk7gxlqr70wh" path="res://Utils/Pause System/pause_menu.gd" id="1_v736x"]
+[ext_resource type="AudioStream" uid="uid://c1bfpx2ve3705" path="res://Sound/33. Cyber Track Zone.mp3" id="2_1idmg"]
+[ext_resource type="FontFile" uid="uid://btddx5muh1hnn" path="res://Fonts/Powertech.ttf" id="2_7nvmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwhev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5w4ur"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ey1tb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_siy43"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yxrls"]
+
+[sub_resource type="Animation" id="Animation_cvk7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 336)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0.09411765, 0.69803923)]
+}
+
+[sub_resource type="Animation" id="Animation_1778w"]
+resource_name = "Show_Menu"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -36), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 367), Vector2(0, 336)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0.09411765, 0), Color(0, 0, 0.09411765, 0.69803923)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qvey"]
+_data = {
+&"RESET": SubResource("Animation_cvk7m"),
+&"Show_Menu": SubResource("Animation_1778w")
+}
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=96305220]
+process_mode = 3
+script = ExtResource("1_v736x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1019904389]
+stream = ExtResource("2_1idmg")
+
+[node name="Top" type="Control" parent="." unique_id=417351278]
+z_index = 1
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="Top" unique_id=2097095121]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 23.0
+color = Color(0, 0, 0.09411765, 1)
+
+[node name="Paused" type="RichTextLabel" parent="Top" unique_id=1326330745]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 640.0
+offset_bottom = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0.09411765, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/normal_font = ExtResource("2_7nvmh")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave freq=3][rainbow freq=0.08]- Paused -"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Background" type="ColorRect" parent="." unique_id=1347837746]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.09411765, 0.69803923)
+
+[node name="Bottom" type="Control" parent="." unique_id=1607974333]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Bottom" unique_id=1397554642]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 640.0
+offset_bottom = 24.0
+color = Color(0, 0, 0.09411765, 1)
+
+[node name="Menu" type="HBoxContainer" parent="Bottom" unique_id=1265921322]
+layout_mode = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+offset_transform_enabled = true
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Resume" type="Button" parent="Bottom/Menu" unique_id=1385007242]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Full screen")
+focus_neighbor_top = NodePath("../Full screen")
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Full screen")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.94905585, 0.94905585, 0.46963003, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0.09411765, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7nvmh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwhev")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5w4ur")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ey1tb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_siy43")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxrls")
+text = "Resume "
+flat = true
+
+[node name="Quit" type="Button" parent="Bottom/Menu" unique_id=803854991]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Resume")
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_right = NodePath("../Title screen")
+focus_neighbor_bottom = NodePath("../Title screen")
+focus_next = NodePath("../Title screen")
+focus_previous = NodePath("../Resume")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.94905585, 0.94905585, 0.46963003, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_disabled_color = Color(0.16470589, 0.17254902, 0.16078432, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.09411765, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7nvmh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwhev")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5w4ur")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ey1tb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_siy43")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxrls")
+text = "Quit "
+flat = true
+
+[node name="Title screen" type="Button" parent="Bottom/Menu" unique_id=500721483]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_right = NodePath("../Full screen")
+focus_neighbor_bottom = NodePath("../Full screen")
+focus_next = NodePath("../Full screen")
+focus_previous = NodePath("../Quit")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.94905585, 0.94905585, 0.46963003, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_disabled_color = Color(0.16470589, 0.17254902, 0.16078432, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.09411765, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7nvmh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwhev")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5w4ur")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ey1tb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_siy43")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxrls")
+text = "TitleScreen"
+flat = true
+
+[node name="Full screen" type="Button" parent="Bottom/Menu" unique_id=1578794515]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Title screen")
+focus_neighbor_top = NodePath("../Title screen")
+focus_neighbor_right = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Title screen")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Title screen")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.94905585, 0.94905585, 0.46963003, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.9490196, 0.47058824, 1)
+theme_override_colors/font_disabled_color = Color(0.16470589, 0.17254902, 0.16078432, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.09411765, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7nvmh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwhev")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5w4ur")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ey1tb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_siy43")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxrls")
+toggle_mode = true
+text = "FULLScreen"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1458846893]
+libraries/ = SubResource("AnimationLibrary_1qvey")
+
+[connection signal="pressed" from="Bottom/Menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Bottom/Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Bottom/Menu/Title screen" to="." method="_on_title_screen_pressed"]
+[connection signal="toggled" from="Bottom/Menu/Full screen" to="." method="_on_full_screen_toggled"]

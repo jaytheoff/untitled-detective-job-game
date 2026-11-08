@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dxbagqxb0emjd"]
+
+[ext_resource type="Script" uid="uid://bsalqs7vi01xb" path="res://Utils/Dialogue System/Scripts/textbox.gd" id="1_db1ld"]
+[ext_resource type="Texture2D" uid="uid://by0xqv8xnxiw6" path="res://Sprites/_CHARACTERS/Gunther/Battle Sprties/High-res/Gunther-Front.png" id="2_44k5r"]
+[ext_resource type="FontFile" uid="uid://btddx5muh1hnn" path="res://Fonts/Powertech.ttf" id="2_db1ld"]
+[ext_resource type="Texture2D" uid="uid://bhh6xjx8uu8vn" path="res://Sprites/_HUD/4 Corner Detail.png" id="3_he00h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktxlv"]
+font = ExtResource("2_db1ld")
+font_size = 22
+font_color = Color(1, 0.8, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he00h"]
+bg_color = Color(1, 0.8, 0, 1)
+border_width_top = 2
+border_color = Color(1, 0.8, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db1ld"]
+
+[node name="TextBox" type="CanvasLayer" unique_id=278584309 node_paths=PackedStringArray("_dialogue", "_name")]
+script = ExtResource("1_db1ld")
+_dialogue = NodePath("OuterContainer/VBoxContainer/InnerContainer2/InnerContainer/HBoxContainer/Dialogue")
+_name = NodePath("OuterContainer/VBoxContainer/Name")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2010767430]
+z_index = 1
+custom_minimum_size = Vector2(194, 144)
+custom_maximum_size = Vector2(194, 144)
+offset_left = 52.0
+offset_top = 83.0
+offset_right = 246.0
+offset_bottom = 227.0
+texture = ExtResource("2_44k5r")
+stretch_mode = 4
+
+[node name="OuterContainer" type="MarginContainer" parent="." unique_id=559484531]
+custom_minimum_size = Vector2(80, 90)
+custom_maximum_size = Vector2(600, 120)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -331.0
+offset_top = -162.99998
+offset_right = 181.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterContainer" unique_id=314377295]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="OuterContainer/VBoxContainer" unique_id=1045098577]
+z_index = 5
+layout_mode = 2
+size_flags_vertical = 0
+text = "GUNTHER"
+label_settings = SubResource("LabelSettings_ktxlv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="OuterContainer/VBoxContainer" unique_id=1472332867]
+z_index = 1
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_he00h")
+
+[node name="InnerContainer2" type="MarginContainer" parent="OuterContainer/VBoxContainer" unique_id=1779528888]
+z_index = 4
+custom_minimum_size = Vector2(416, 100)
+custom_maximum_size = Vector2(416, 100)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="OuterContainer/VBoxContainer/InnerContainer2" unique_id=1880544163]
+layout_mode = 2
+color = Color(0.039215688, 0, 0.14901961, 1)
+
+[node name="InnerContainer" type="MarginContainer" parent="OuterContainer/VBoxContainer/InnerContainer2" unique_id=1789910849]
+z_index = 4
+custom_minimum_size = Vector2(600, 100)
+custom_maximum_size = Vector2(1000, 100)
+layout_mode = 2
+theme_override_constants/margin_bottom = 14
+
+[node name="NinePatchRect" type="NinePatchRect" parent="OuterContainer/VBoxContainer/InnerContainer2/InnerContainer" unique_id=2104189890]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("3_he00h")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterContainer/VBoxContainer/InnerContainer2/InnerContainer" unique_id=1437707449]
+z_index = 1
+layout_mode = 2
+
+[node name="Dialogue" type="RichTextLabel" parent="OuterContainer/VBoxContainer/InnerContainer2/InnerContainer/HBoxContainer" unique_id=1044502828]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_db1ld")
+theme_override_fonts/bold_font = ExtResource("2_db1ld")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_db1ld")
+bbcode_enabled = true
+text = "no don't get me damn involved"
+fit_content = true
+scroll_active = false
+scroll_following = true
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+language = "en_CA"
+
+[node name="ColorRect" type="ColorRect" parent="OuterContainer/VBoxContainer/InnerContainer2/InnerContainer" unique_id=2077524993]
+layout_mode = 2
+color = Color(0.07450981, 0, 0.23137255, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2058953413]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.09411765, 0.69803923)
