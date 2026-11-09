@@ -5,7 +5,9 @@
 
 [sub_resource type="Environment" id="Environment_1fexg"]
 background_mode = 1
-background_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+background_color = Color(0, 0.5137255, 0.5137255, 1)
+background_energy_multiplier = 0.23
+ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cb4pc"]
 size = Vector3(51.57123, 1, 51.05168)
@@ -16,7 +18,9 @@ size = Vector3(50, 1, 50)
 [sub_resource type="BoxMesh" id="BoxMesh_j0an6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_af206"]
-size = Vector3(25.153793, 5.4317627, 0.6008301)
+size = Vector3(25.153793, 8.13308, 0.6008301)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1fexg"]
 
 [node name="SuperMarket" type="Node3D" unique_id=1669226758]
 
@@ -69,31 +73,31 @@ mesh = SubResource("BoxMesh_cjtun")
 [node name="Walls" type="StaticBody3D" parent="Stuff" unique_id=753281842]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Stuff/Walls" unique_id=228026438]
-transform = Transform3D(25.196146, 0, 0, 0, 4.3307934, 0, 0, 0, 0.62623745, -0.049391866, 2.4102457, -12.138989)
+transform = Transform3D(25.196146, 0, 0, 0, 8.081752, 0, 0, 0, 0.62623745, -0.049391866, 2.4102457, -12.138989)
 mesh = SubResource("BoxMesh_j0an6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Walls" unique_id=83222483]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1092453, 2.2158813, -12.031242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1092453, 2.9447823, -12.031242)
 shape = SubResource("BoxShape3D_af206")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Stuff/Walls" unique_id=648267488]
-transform = Transform3D(-1.1013585e-06, 0, -0.62623745, 0, 4.3307934, 0, 25.196146, 0, -2.7373709e-08, 12.199682, 2.4102457, 0.23366642)
+transform = Transform3D(-1.1013585e-06, 0, -0.62623745, 0, 8.230129, 0, 25.196146, 0, -2.7373709e-08, 12.199682, 2.4102457, 0.23366642)
 mesh = SubResource("BoxMesh_j0an6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Stuff/Walls" unique_id=551484557]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.08805, 2.2158813, 0.18141651)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.08805, 2.6551666, 0.18141651)
 shape = SubResource("BoxShape3D_af206")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Stuff/Walls" unique_id=1694193369]
-transform = Transform3D(25.196146, 0, 0, 0, 4.3307934, 0, 0, 0, 0.62623745, -0.049391866, 2.4102457, 12.23931)
+transform = Transform3D(25.196146, 0, 0, 0, 8.222908, 0, 0, 0, 0.62623745, -0.049391866, 2.4102457, 12.23931)
 mesh = SubResource("BoxMesh_j0an6")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Stuff/Walls" unique_id=1421240891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1092453, 2.2158813, 12.347057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1092453, 2.3983536, 12.347057)
 shape = SubResource("BoxShape3D_af206")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Stuff/Walls" unique_id=419443816]
-transform = Transform3D(-4.5491913e-07, 0, -0.62623745, 0, 4.3307934, 0, 10.407337, 0, -2.7373709e-08, -12.2422695, 2.4102457, 7.47411)
+transform = Transform3D(-4.5491913e-07, 0, -0.62623745, 0, 7.7597237, 0, 10.407337, 0, -2.7373709e-08, -12.2422695, 2.4102457, 7.47411)
 mesh = SubResource("BoxMesh_j0an6")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Stuff/Walls" unique_id=608013816]
@@ -101,12 +105,16 @@ transform = Transform3D(-1.8055108e-08, 0, -1, 0, 1, 0, 0.4130527, 0, -4.371139e
 shape = SubResource("BoxShape3D_af206")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Stuff/Walls" unique_id=586857962]
-transform = Transform3D(-5.0320676e-07, 0, -0.62623745, 0, 4.3307934, 0, 11.51203, 0, -2.7373709e-08, -12.2422695, 2.4102457, -6.6215124)
+transform = Transform3D(-5.0320676e-07, 0, -0.62623745, 0, 7.7800174, 0, 11.51203, 0, -2.7373709e-08, -12.2422695, 2.4102457, -6.6215124)
 mesh = SubResource("BoxMesh_j0an6")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Stuff/Walls" unique_id=2112053546]
 transform = Transform3D(-1.9971578e-08, 0, -1, 0, 1, 0, 0.45689642, 0, -4.371139e-08, -12.353902, 2.2158813, -6.6453857)
 shape = SubResource("BoxShape3D_af206")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Stuff/Walls" unique_id=1229560938]
+transform = Transform3D(25.066654, 0, 0, 0, 0.9252259, 0, 0, 0, 25.14006, 0, 6.2806087, 0)
+mesh = SubResource("BoxMesh_1fexg")
 
 [node name="Player" parent="." unique_id=2082779931 instance=ExtResource("1_cjtun")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.34650612, 5.186536, -0.053447723)
@@ -115,32 +123,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.34650612, 5.186536, -
 
 [node name="Light" type="Node3D" parent="." unique_id=581324441]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Light" unique_id=1333450341]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, 6.954541, 3.9627695, 6.331117)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="Light" unique_id=1688122620]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, 6.954541, 3.9627695, -4.046225)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="Light" unique_id=180039631]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, 1.2436523, 3.9627695, 6.331117)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="Light" unique_id=360428202]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, 1.2436523, 3.9627695, -4.046225)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="Light" unique_id=505399087]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, -5.7555294, 3.9627695, 6.331117)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
-
-[node name="OmniLight3D7" type="OmniLight3D" parent="Light" unique_id=967359496]
-transform = Transform3D(0.03484711, -0.9993927, 0, 0.9993927, 0.03484711, 0, 0, 0, 1, -5.7555294, 3.9627695, -4.046225)
-light_indirect_energy = 6.3
-omni_range = 6.9917974
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" unique_id=1076513162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.734894, 0)
+omni_range = 4096.0
+omni_attenuation = 0.074
